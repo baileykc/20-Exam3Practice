@@ -39,20 +39,20 @@ def run_test_zero_changer():
     # -------------------------------------------------------------------------
     # Test 2:
     test2 = ([10, 3, 0, 13], [77, 10, 14, 21, 35, 9], [3, 43, 32], [.9, 0, 21])
-    expected1 = ([10, 3, 0, 13], [77, 10, 14, 21, 35, 9], [3, 43, 32], [.9, 0, 21])
-    zero_changer(test1)
+    expected2 = ([10, 3, 1, 13], [77, 10, 14, 21, 35, 9], [3, 43, 32], [.9, 2, 21])
+    zero_changer(test2)
     print()
     print('Test 2:')
-    print('  Expected:', expected1)
+    print('  Expected:', expected2)
     print('  Actual:  ', test2)
 
     # Test 3:
     test3 = ([9, 11, 13, 9], [33, 87, 43, 3, 5, 0], [0, 1, 0], [71, 43, 49])
-    expected1 = ([9, 11, 13, 9], [33, 87, 43, 3, 5, 0], [0, 1, 0], [71, 43, 49])
-    zero_changer(test1)
+    expected3 = ([9, 11, 13, 9], [33, 87, 43, 3, 5, 1], [2, 1, 3], [71, 43, 49])
+    zero_changer(test3)
     print()
     print('Test 3:')
-    print('  Expected:', expected1)
+    print('  Expected:', expected3)
     print('  Actual:  ', test3)
 
 
@@ -95,7 +95,7 @@ def zero_changer(tuple_of_lists):
             if tuple_of_lists[k][j] == 0:
                 tuple_of_lists[k][j] = i
                 i = i + 1
-        return tuple_of_lists[i]
+
 
 
 # -----------------------------------------------------------------------------
