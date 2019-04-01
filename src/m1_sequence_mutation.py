@@ -95,6 +95,7 @@ def zero_changer(tuple_of_lists):
             if tuple_of_lists[k][j] == 0:
                 tuple_of_lists[k][j] = i
                 i = i + 1
+        return tuple_of_lists[i]
 
 
 # -----------------------------------------------------------------------------
