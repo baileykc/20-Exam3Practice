@@ -106,10 +106,33 @@ def hourglass(window, n, point, radius, color):
     circle = rg.Circle(point, radius)
     circle.fill_color = color
     circle.attach_to(window)
+    nl = rg.Line(rg.Point(point.x - radius, point.y), rg.Point(point.x + radius, point.y))
+    nl.attach_to(window)
+    for k in range(1, 2*n - 1):
+
+
+        for j in range((k + 3)//2):
+            nc = circle.clone()
+
+        if k % 2 == 1:
+            new_circle = rg.Circle(rg.Point(nc.center.x + j * radius * 2, nc.center.y), circle.radius)
+            new_circle.fill_color = color
+            new_circle.attach_to(window)
+        else:
+            nc = rg.Circle(rg.Point(nc.center.x - j * radius * 2, nc.center.y), circle.radius)
+            nc.fill_color = color
+            nc.attach_to(window)
+        if k % 2 == 1:
+            nl = rg.Line(rg.Point(point.x - radius - radius * j, point.y - j * radius * math.sqrt(3)),
+                           rg.Point(point.x + radius + j * radius, point.y - j * radius * math.sqrt(3)))
+            nl.attach_to(window)
+
+        else:
+         nl= rg.Line(rg.Point(point.x - radius - radius * j, point.y - (-j) * radius * math.sqrt(3)),
+                           rg.Point(point.x + radius + j * radius, point.y - (-j) * radius * math.sqrt(3)))
+        nl.attach_to(window)
+
     window.render()
-    for k in range(n):
-        circle.center.x = circle.center.x + radius
-        circle.center.y = circle.center.y - radius
 
 def run_test_many_hourglasses():
     """ Tests the    many_hourglasses    function. """
