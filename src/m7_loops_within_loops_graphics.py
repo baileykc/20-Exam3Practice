@@ -108,7 +108,8 @@ def hourglass(window, n, point, radius, color):
     circle.attach_to(window)
     window.render()
     for k in range(n):
-        circle.center.x = circle.center.x + radius * math.sqrt(3)
+        circle.center.x = circle.center.x + radius
+        circle.center.y = circle.center.y - radius
 
 def run_test_many_hourglasses():
     """ Tests the    many_hourglasses    function. """
